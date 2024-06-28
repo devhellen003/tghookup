@@ -31,6 +31,7 @@ const setWebhook = async () => {
 
 // Handle incoming updates
 app.post('/webhook', (req, res) => {
+    console.log("Received Message")
     const message = req.body.message;
     if (message) {
         console.log(`Message from ${message.from.username}: ${message.text}`);
