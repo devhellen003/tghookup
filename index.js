@@ -10,7 +10,7 @@ const WEBHOOK_URL = process.env.WEBHOOK_URL;
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}`;
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Set up the webhook
 const setWebhook = async () => {
@@ -30,7 +30,7 @@ const setWebhook = async () => {
 };
 
 // Handle incoming updates
-app.post(`/webhook/${TELEGRAM_BOT_TOKEN}` , (req, res) => {
+app.post(`/webhook/${TELEGRAM_BOT_TOKEN}`, (req, res) => {
     console.log("Received Message")
     const message = req.body.message;
     if (message) {
