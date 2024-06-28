@@ -20,7 +20,7 @@ const setWebhook = async () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ url: WEBHOOK_URL })
+            body: JSON.stringify({ url: `WEBHOOK_URL/${TELEGRAM_BOT_TOKEN}` })
         });
         const data = await response.json();
         console.log('Webhook set:', data);
