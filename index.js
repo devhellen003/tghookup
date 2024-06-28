@@ -30,7 +30,7 @@ const setWebhook = async () => {
 };
 
 // Handle incoming updates
-app.post('/webhook', (req, res) => {
+app.post(`/webhook/${TELEGRAM_BOT_TOKEN}` , (req, res) => {
     console.log("Received Message")
     const message = req.body.message;
     if (message) {
